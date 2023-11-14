@@ -1,15 +1,44 @@
-[2023-11-09 17:45:31,242] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 17:45:40,059] INFO _log() L224  127.0.0.1 - - [09/Nov/2023 17:45:40] "[35m[1mGET /products HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 17:45:40,067] ERROR _log() L224  Error on request:
-Traceback (most recent call last):
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\serving.py", line 335, in run_wsgi
-    execute(self.server.app)
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\serving.py", line 322, in execute
-    application_iter = app(environ, start_response)
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py", line 36, in <module>
-    responses={"200": ProductViewSchema, "409": ErrorSchema, "400": ErrorSchema},
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-NameError: name 'ProductViewSchema' is not defined - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 17:46:02,977] INFO _log() L224   * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\schemas\\__init__.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 17:46:03,096] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
+[2023-11-14 16:35:48,892] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:35:53,262] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:35:53] "[33mDELETE /product/1 HTTP/1.1[0m" 404 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:35:57,535] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:35:57] "[33mDELETE /product/1 HTTP/1.1[0m" 404 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:35:58,302] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:35:58] "[33mDELETE /product/1 HTTP/1.1[0m" 404 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:36:03,674] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:36:03] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:38:30,827] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:38:30,965] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:38:33,089] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:38:33,214] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:38:59,585] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:38:59,718] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:39:34,215] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:39:34,342] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:40:00,729] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:40:00,853] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:40:27,202] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:40:27,337] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:40:40,569] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:40:40,705] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:41:07,139] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:41:07,277] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:41:27,877] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:41:27] "DELETE /product/1 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:41:34,622] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:41:34] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:43:40,243] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:43:40,384] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:43:45,856] WARNING del_product() L120  Erro ao deletar product #'None', product não encontrado na base :/ - call_trace=C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py L120 
+[2023-11-14 16:43:45,857] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:43:45] "[33mDELETE /product/1 HTTP/1.1[0m" 404 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:43:56,729] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:43:56,850] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:24,012] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:24] "OPTIONS /product/6 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:24,040] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:24] "DELETE /product/6 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:25,448] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:25] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:30,153] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:30] "OPTIONS /product/9 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:30,169] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:30] "DELETE /product/9 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:31,533] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:31] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:36,721] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:36] "OPTIONS /product/4 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:36,737] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:36] "DELETE /product/4 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:37,964] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:37] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:39,935] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:39] "OPTIONS /product/3 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:39,953] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:39] "DELETE /product/3 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:41,039] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:41] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:43,581] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:43] "OPTIONS /product/7 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:43,599] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:43] "DELETE /product/7 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:52:44,693] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:52:44] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  

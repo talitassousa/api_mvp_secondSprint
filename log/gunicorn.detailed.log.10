@@ -1,70 +1,44 @@
-[2023-11-09 16:10:15,362] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:10:16,754] INFO _log() L224   * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:10:16,861] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:10:18,632] ERROR log_exception() L1449 Exception on /products [GET] - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py L1449
-Traceback (most recent call last):
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1520, in full_dispatch_request
-    return self.finalize_request(rv)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1539, in finalize_request
-    response = self.make_response(rv)
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1730, in make_response
-    raise TypeError(
-TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a list.
-[2023-11-09 16:10:18,635] INFO _log() L224  127.0.0.1 - - [09/Nov/2023 16:10:18] "[35m[1mGET /products HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:10:39,507] INFO _log() L224   * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:10:39,608] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:11:17,465] INFO _log() L224   * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:11:17,647] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:11:22,737] ERROR log_exception() L1449 Exception on /products [GET] - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py L1449
-Traceback (most recent call last):
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1520, in full_dispatch_request
-    return self.finalize_request(rv)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1539, in finalize_request
-    response = self.make_response(rv)
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1730, in make_response
-    raise TypeError(
-TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a list.
-[2023-11-09 16:11:22,741] INFO _log() L224  127.0.0.1 - - [09/Nov/2023 16:11:22] "[35m[1mGET /products HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:11:30,352] INFO _log() L224   * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:11:30,479] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:11:36,886] INFO _log() L224   * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:11:37,001] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:14:18,378] INFO _log() L224   * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\schemas\\product.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:14:18,489] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:14:44,208] INFO _log() L224   * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\schemas\\product.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:14:44,310] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:15:01,784] ERROR log_exception() L1449 Exception on /products [GET] - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py L1449
-Traceback (most recent call last):
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1520, in full_dispatch_request
-    return self.finalize_request(rv)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1539, in finalize_request
-    response = self.make_response(rv)
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1730, in make_response
-    raise TypeError(
-TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a list.
-[2023-11-09 16:15:01,788] INFO _log() L224  127.0.0.1 - - [09/Nov/2023 16:15:01] "[35m[1mGET /products HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:18:35,479] INFO _log() L224   * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:18:35,590] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:19:26,516] INFO _log() L224   * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:19:26,622] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:19:29,659] INFO _log() L224  127.0.0.1 - - [09/Nov/2023 16:19:29] "[35m[1mGET /products HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:20:22,615] INFO _log() L224   * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:20:22,719] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:20:28,842] INFO _log() L224  127.0.0.1 - - [09/Nov/2023 16:20:28] "[35m[1mGET /products HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:26:31,921] INFO _log() L224  127.0.0.1 - - [09/Nov/2023 16:26:31] "[35m[1mGET /products HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
-[2023-11-09 16:26:52,833] INFO _log() L224  127.0.0.1 - - [09/Nov/2023 16:26:52] "[35m[1mGET /products HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L224 
+[2023-11-14 16:05:50,943] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:05:52,730] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:05:52] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:05:54,237] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:05:54] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:06:06,159] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:06:06] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:06:13,766] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:06:13] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:06:43,733] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:06:43,857] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:06:46,693] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:06:46] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:07:32,570] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:07:32,706] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:07:42,355] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:07:42] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:07:42,389] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:07:42] "POST /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:09:10,750] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:09:10] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:09:22,732] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:09:22] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:09:25,401] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:09:25] "[33mOPTIONS /product/4 HTTP/1.1[0m" 404 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:09:44,364] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:09:44,516] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:09:47,352] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:09:47] "[33mOPTIONS /product/4 HTTP/1.1[0m" 404 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:09:49,867] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:09:49] "[33mOPTIONS /product/4 HTTP/1.1[0m" 404 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:09:57,794] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:09:57,919] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:10:25,148] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:10:25] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:10:25,168] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:10:25] "POST /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:10:26,525] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:10:26] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:10:49,580] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:10:49] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:10:49,597] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:10:49] "POST /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:10:56,203] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:10:56] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:11:08,560] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:11:08] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:14:53,484] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:14:53] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:14:53,484] WARNING add_product() L54   Erro ao adicionar product '', product de mesmo nome já salvo na base :/ - call_trace=C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py L54  
+[2023-11-14 16:14:53,484] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:14:53] "[31m[1mPOST /product HTTP/1.1[0m" 409 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:15:02,100] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:15:02] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:15:02,118] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:15:02] "POST /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:16:46,257] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:16:46] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:16:51,847] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:16:51] "[33mOPTIONS /product/6 HTTP/1.1[0m" 404 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:17:22,563] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:17:22] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:17:22,578] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:17:22] "POST /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:17:39,385] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:17:39] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:18:02,943] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:18:02] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:18:02,960] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:18:02] "POST /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:18:04,319] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:18:04] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:19:13,589] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:19:13] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:19:15,210] INFO _log() L96   127.0.0.1 - - [14/Nov/2023 16:19:15] "[33mOPTIONS /product/1 HTTP/1.1[0m" 404 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-14 16:20:38,004] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  

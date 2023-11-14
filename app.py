@@ -9,51 +9,27 @@ from sqlalchemy.exc import IntegrityError
 from model import Session, Product
 from logger import logger
 from schemas import *
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 info = Info(title="Minha API", version="1.0.0")
-app = Flask(__name__, info=info)
-CORS(app)
+app = Flask(__name__)
+cors = CORS(app)
 
-# Configuração do CORS
-cors = CORS(app, resources={r"/products/*": {"origins": "http://localhost:4200"}})
+app.config["CORS_HEADERS"] = "Content-Type"
 
-# Configuração do banco de dados SQLite
-db_name = "exemplo.db"
-
-# Cria a tabela se ela não existir
-def create_table():
-    conn = sqlite3.connect(db_name)
-    cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS tarefas (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            descricao TEXT NOT NULL,
-            concluida BOOLEAN NOT NULL
-        )
-    ''')
-    conn.commit()
-    conn.close()
-
-# home_tag = Tag(
-#     name="Documentação",
-#     description="Seleção de documentação: Swagger, Redoc ou RapiDoc",
-# )
-# product_tag = Tag(
-#     name="Product", description="Adição, visualização e remoção de products à base"
-# )
+db_name = "db.sqlite3"
 
 
-@app.get("/", tags=[home_tag])
+@app.get("/")
+@cross_origin()
 def home():
     return redirect("/openapi")
 
 
 @app.post(
     "/product",
-    tags=[product_tag],
-    responses={"200": ProductViewSchema, "409": ErrorSchema, "400": ErrorSchema},
 )
+@cross_origin()
 def add_product():
     data = request.get_json()
     if not data:
@@ -86,82 +62,30 @@ def add_product():
         return {"message": error_msg}, 400
 
 
-# @app.get(
-#     "/products",
-#     tags=[product_tag],
-#     responses={"200": ListagemProductsSchema, "404": ErrorSchema},
-# )
-# def get_products():
-#     logger.debug(f"Coletando products ")
-#     session = Session()
-#     products = session.query(Product).all()
-
-#     products = [...]
-    
-#     products_representation = apresenta_products(products)
-    
-#     return jsonify({"products": products_representation})
-    # if not products:
-    #     return [], 200
-    # else:
-    #     logger.debug(f"%d products encontrados" % len(products))
-    #     return apresenta_products(products), 200
-
-# @app.get('/products')
-# def get_products():
-#     logger.debug(f"Coletando produtos ")
-#     session = Session()
-#     products = session.query(Product).all()
-
-#     if not products:
-#         return {"produtos": []}, 200
-#     else:
-#         logger.debug(f"%d rodutos econtrados" % len(products))
-#         print(products)
-#         return products, 200
-
-# @app.get('/products', )
-# def get_products():
-#     logger.debug(f"Coletando produtos ")
-#     session = Session()
-#     products = session.query(Product).all()
-
-#     if not products:
-#         return JSONResponse(content=[], status_code=200)
-#     else:
-#         logger.debug(f"%d produtos encontrados" % len(products))
-#         return JSONResponse(content=apresenta_products(products), status_code=200)
-
-
-# @app.route("/products", tags=[product_tag],
-#    responses={"200": ListagemProductsSchema, "404": ErrorSchema})
-
-# def get_products():
-#     products= [{ "nome": p[0], "recipiente": p[1], "quantidade": p[2], "valor": p[3]} for p in products ] 
-#     products_array = [products]
-#     return jsonify(products_array)
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
-@app.route('/tarefas', methods=['GET'])
+@app.route("/products", methods=["GET"])
+@cross_origin()
 def get_products():
-    create_table()
-    conn = sqlite3.connect(db_name)
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM products")
-    tarefas = cursor.fetchall()
-    conn.close()
-    tarefas_json = [{ "nome": p[0], "recipiente": p[1], "quantidade": p[2], "valor": p[3]} for p in products]
-    return jsonify(tarefas_json)
+    session = Session()
 
+    products = session.execute("SELECT * FROM product")
+
+    products_json = [
+        {
+            "id": p[0],
+            "nome": p[1],
+            "recipiente": p[2],
+            "quantidade": p[3],
+            "valor": p[4],
+        }
+        for p in products
+    ]
+    return jsonify(products_json)
 
 
 @app.get(
     "/product",
-    tags=[product_tag],
-    responses={"200": ProductViewSchema, "404": ErrorSchema},
 )
+@cross_origin()
 def get_product(query: ProductBuscaSchema):
     product_id = query.id
     logger.debug(f"Coletando dados sobre product #{product_id}")
@@ -177,23 +101,21 @@ def get_product(query: ProductBuscaSchema):
         return apresenta_product(product), 200
 
 
-@app.delete(
-    "/product",
-    tags=[product_tag],
-    responses={"200": ProductDelSchema, "404": ErrorSchema},
-)
-def del_product(query: ProductBuscaSchema):
-    product_nome = unquote(unquote(query.nome))
-    print(product_nome)
-    logger.debug(f"Deletando dados sobre product #{product_nome}")
+@app.route("/product/<int:product_id>", methods=["DELETE"])
+@cross_origin()
+def del_product(product_id):
     session = Session()
-    count = session.query(Product).filter(Product.nome == product_nome).delete()
-    session.commit()
 
-    if count:
-        logger.debug(f"Deletado product #{product_nome}")
-        return {"mesage": "product removido", "id": product_nome}
+    product = session.query(Product).filter(Product.id == product_id).first()
+
+    if product:
+        logger.debug(f"Deletando dados sobre product #{product_id}")
+        logger.debug(f"Deletado product #{product}")
+
+        session.delete(product)
+        session.commit()
+        return {"message": "produto removido", "id": product_id}
     else:
         error_msg = "product não encontrado na base :/"
-        logger.warning(f"Erro ao deletar product #'{product_nome}', {error_msg}")
-        return {"mesage": error_msg}, 404
+        logger.warning(f"Erro ao deletar product #'{product}', {error_msg}")
+        return {"message": error_msg}, 404
