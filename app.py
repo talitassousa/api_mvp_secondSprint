@@ -12,7 +12,7 @@ from schemas import *
 from flask_cors import CORS, cross_origin
 
 info = Info(title="Minha API", version="1.0.0")
-app = Flask(__name__)
+app = OpenAPI(__name__, info=info)
 cors = CORS(app)
 
 app.config["CORS_HEADERS"] = "Content-Type"
@@ -99,6 +99,39 @@ def get_product(query: ProductBuscaSchema):
     else:
         logger.debug(f"product encontrado: '{product.nome}'")
         return apresenta_product(product), 200
+
+@app.route("/product/<int:product_id>", methods=["PUT"])
+@cross_origin()
+def update_product(product_id):
+    session = Session()
+
+    product = session.query(Product).filter(Product.id == product_id).first()
+
+    if not product:
+        error_msg = "Produto não encontrado na base :/"
+        logger.warning(f"Erro ao buscar produto '{product_id}', {error_msg}")
+        return {"message": error_msg}, 404
+
+    data = request.get_json()
+
+    if not data:
+        return {"message": "Dados JSON ausentes no corpo da solicitação."}, 400
+
+    # Atualizar os atributos do produto com os dados fornecidos no JSON
+    product.nome = data.get("nome", product.nome)
+    product.recipiente = data.get("recipiente", product.recipiente)
+    product.quantidade = data.get("quantidade", product.quantidade)
+    product.valor = data.get("valor", product.valor)
+
+    try:
+        session.commit()
+        logger.debug(f"Produto atualizado: '{product.nome}'")
+        return apresenta_product(product), 200
+
+    except Exception as e:
+        error_msg = "Não foi possível atualizar o produto :/"
+        logger.warning(f"Erro ao atualizar produto '{product.nome}', {error_msg}")
+        return {"message": error_msg}, 400
 
 
 @app.route("/product/<int:product_id>", methods=["DELETE"])
