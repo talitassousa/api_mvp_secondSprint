@@ -62,7 +62,7 @@ def add_product():
         return {"message": error_msg}, 400
 
 
-@app.route("/products", methods=["GET"])
+@app.get("/products")
 @cross_origin()
 def get_products():
     session = Session()
@@ -100,7 +100,7 @@ def get_product(query: ProductBuscaSchema):
         logger.debug(f"product encontrado: '{product.nome}'")
         return apresenta_product(product), 200
 
-@app.route("/product/<int:product_id>", methods=["PUT"])
+@app.put("/product/<int:product_id>")
 @cross_origin()
 def update_product(product_id):
     session = Session()
@@ -134,11 +134,13 @@ def update_product(product_id):
         return {"message": error_msg}, 400
 
 
-@app.route("/product/<int:product_id>", methods=["DELETE"])
+@app.delete("/product/")
 @cross_origin()
-def del_product(product_id):
-    session = Session()
+def del_product(query: ProductBuscaSchema):
 
+    product_id = query.id
+    logger.debug(f"Coletando dados sobre product #{product_id}")
+    session = Session()
     product = session.query(Product).filter(Product.id == product_id).first()
 
     if product:
