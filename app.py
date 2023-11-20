@@ -1,5 +1,5 @@
 from flask_openapi3 import OpenAPI, Info, Tag
-from flask import Flask, request, jsonify, redirect
+from flask import Flask, request, jsonify, redirect, abort
 from urllib.parse import unquote
 import sqlite3
 
@@ -45,18 +45,29 @@ def add_product():
     try:
         session = Session()
 
+        nome = data.get("nome")
+        recipiente = data.get("recipiente")
+
+        # Verificar se o produto já existe no banco de dados
+        existing_product = (
+            session.query(Product).filter_by(nome=nome, recipiente=recipiente).first()
+        )
+
+        if existing_product is not None:
+            raise RuntimeError
+
         session.add(product)
 
         session.commit()
         logger.debug(f"Adicionado product de nome: '{product.nome}'")
         return apresenta_product(product), 200
 
-    except IntegrityError as e:
-        error_msg = "product de mesmo nome já salvo na base :/"
+    except RuntimeError as runtimeError:
+        error_msg = "produto de mesmo nome e recipiente já salvo na base :/"
         logger.warning(f"Erro ao adicionar product '{product.nome}', {error_msg}")
         return {"message": error_msg}, 409
 
-    except Exception as e:
+    except Exception as error:
         error_msg = "Não foi possível salvar novo item :/"
         logger.warning(f"Erro ao adicionar product '{product.nome}', {error_msg}")
         return {"message": error_msg}, 400
@@ -100,24 +111,27 @@ def get_product(query: ProductBuscaSchema):
         logger.debug(f"product encontrado: '{product.nome}'")
         return apresenta_product(product), 200
 
-@app.put("/product/<int:product_id>")
-@cross_origin()
-def update_product(product_id):
-    session = Session()
 
+@app.put("/product/")
+@cross_origin()
+def update_product():
+    data = request.get_json()
+    if not data:
+        return {"message": "Dados JSON ausentes no corpo da solicitação."}, 400
+
+    product_id = data.get("id")
+    if not product_id:
+        return {"message": "ID do produto ausente no corpo da solicitação."}, 400
+
+    session = Session()
     product = session.query(Product).filter(Product.id == product_id).first()
 
     if not product:
         error_msg = "Produto não encontrado na base :/"
-        logger.warning(f"Erro ao buscar produto '{product_id}', {error_msg}")
+        logger.warning(f"Erro ao buscar produto '#{product_id}', {error_msg}")
         return {"message": error_msg}, 404
 
-    data = request.get_json()
-
-    if not data:
-        return {"message": "Dados JSON ausentes no corpo da solicitação."}, 400
-
-    # Atualizar os atributos do produto com os dados fornecidos no JSON
+    # Update product data
     product.nome = data.get("nome", product.nome)
     product.recipiente = data.get("recipiente", product.recipiente)
     product.quantidade = data.get("quantidade", product.quantidade)
@@ -128,16 +142,14 @@ def update_product(product_id):
         logger.debug(f"Produto atualizado: '{product.nome}'")
         return apresenta_product(product), 200
 
-    except Exception as e:
+    except Exception as error:
         error_msg = "Não foi possível atualizar o produto :/"
         logger.warning(f"Erro ao atualizar produto '{product.nome}', {error_msg}")
         return {"message": error_msg}, 400
 
-
 @app.delete("/product/")
 @cross_origin()
 def del_product(query: ProductBuscaSchema):
-
     product_id = query.id
     logger.debug(f"Coletando dados sobre product #{product_id}")
     session = Session()

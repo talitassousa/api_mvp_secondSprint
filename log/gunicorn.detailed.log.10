@@ -1,67 +1,44 @@
-[2023-11-17 15:47:11,607] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:47:14,805] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:47:14] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:47:14,897] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:47:14] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:47:14,906] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:47:14] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:47:14,907] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:47:14] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:47:15,044] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:47:15] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:47:15,048] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:47:15] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:47:30,798] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:47:30] "DELETE /product?id=1 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:47:45,582] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:47:45] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:48:02,492] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:48:02] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:48:02,512] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:48:02] "POST /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:48:04,073] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:48:04] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:48:05,277] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:48:05] "OPTIONS /product/1 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:48:05,282] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:48:05] "[31m[1mDELETE /product/1 HTTP/1.1[0m" 405 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:49:17,173] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:49:17] "[31m[1mGET /product/1 HTTP/1.1[0m" 405 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:49:17,398] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:49:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:49:45,902] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:49:45] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:49:56,523] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:49:56] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:49:56,535] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:49:56] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:52:14,010] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:52:14] "[31m[1mGET /product/1 HTTP/1.1[0m" 405 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:53:32,092] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:53:32,225] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:53:43,620] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:53:43] "[35m[1mGET /product/1 HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:53:43,634] ERROR _log() L96   Error on request:
-Traceback (most recent call last):
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
-    execute(self.server.app)
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\serving.py", line 323, in execute
-    application_iter = app(environ, start_response)
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\cli.py", line 907, in app
-    raise err from None
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\cli.py", line 898, in run_command
-    app = info.load_app()
-          ^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\cli.py", line 313, in load_app
-    app = locate_app(import_name, None, raise_if_not_found=False)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\cli.py", line 219, in locate_app
-    __import__(module_name)
-  File "C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py", line 137, in <module>
-    @app.delete("/product/<int: product_id>",)
-     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_openapi3\scaffold.py", line 371, in decorator
-    self._add_url_rule(rule, view_func=view_func, **options)
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_openapi3\openapi.py", line 357, in _add_url_rule
-    self.add_url_rule(rule, endpoint, view_func, provide_automatic_options, **options)
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\sansio\scaffold.py", line 44, in wrapper_func
-    return f(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\sansio\app.py", line 655, in add_url_rule
-    self.url_map.add(rule)
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 169, in add
-    rule.bind(self)
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\rules.py", line 563, in bind
-    self.compile()
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\rules.py", line 708, in compile
-    self._parts.extend(self._parse_rule(rule))
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\rules.py", line 600, in _parse_rule
-    raise ValueError(f"malformed url rule: {rule!r}")
-ValueError: malformed url rule: '/product/<int: product_id>' - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:54:07,598] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:54:07] "[35m[1mOPTIONS /product/1 HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:55:43,926] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:55:44,050] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:55:55,701] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:55:55] "OPTIONS /product/1 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-11-17 15:55:55,715] WARNING del_product() L155  Erro ao deletar product #'None', product não encontrado na base :/ - call_trace=C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py L155 
-[2023-11-17 15:55:55,729] INFO _log() L96   127.0.0.1 - - [17/Nov/2023 15:55:55] "[33mDELETE /product/1 HTTP/1.1[0m" 404 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 10:58:49,021] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:02:59,903] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:02:59] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:02:59,914] WARNING add_product() L72   Erro ao adicionar product 'Guaraná', Não foi possível salvar novo item :/ - call_trace=C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py L72  
+[2023-11-20 11:02:59,917] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:02:59] "[31m[1mPOST /product HTTP/1.1[0m" 400 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:03:09,367] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:03:09,508] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:03:11,751] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:03:11] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:03:11,761] WARNING add_product() L72   Erro ao adicionar product 'Guaraná', Não foi possível salvar novo item :/ - call_trace=C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py L72  
+[2023-11-20 11:03:11,762] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:03:11] "[31m[1mPOST /product HTTP/1.1[0m" 400 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:09:00,811] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:09:00,943] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:09:40,476] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:09:40,602] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:09:52,852] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:09:52,983] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:10:00,080] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:10:00] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:10:00,090] WARNING add_product() L69   Erro ao adicionar product 'Guaraná', produto de mesmo nome e recipiente já salvo na base :/ - call_trace=C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py L69  
+[2023-11-20 11:10:00,091] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:10:00] "[31m[1mPOST /product HTTP/1.1[0m" 409 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:10:32,674] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:10:32,803] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:10:41,026] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:10:41] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:10:41,041] WARNING add_product() L72   Erro ao adicionar product 'Guaraná', Não foi possível salvar novo item :/ - call_trace=C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py L72  
+[2023-11-20 11:10:41,042] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:10:41] "[31m[1mPOST /product HTTP/1.1[0m" 400 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:10:57,253] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:10:57,379] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:11:05,555] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:11:05,721] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:11:14,107] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:11:14,280] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:11:16,957] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:11:16] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:11:16,966] WARNING add_product() L72   Erro ao adicionar product 'Guaraná', Não foi possível salvar novo item :/ - call_trace=C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py L72  
+[2023-11-20 11:11:16,967] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:11:16] "[31m[1mPOST /product HTTP/1.1[0m" 400 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:11:28,841] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:11:28,967] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:11:32,381] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:11:32] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:11:32,390] WARNING add_product() L67   Erro ao adicionar product 'Guaraná', produto de mesmo nome e recipiente já salvo na base :/ - call_trace=C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py L67  
+[2023-11-20 11:11:32,391] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 11:11:32] "[31m[1mPOST /product HTTP/1.1[0m" 409 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:12:59,173] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 11:12:59,304] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 14:08:06,295] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 14:08:06] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 14:11:52,333] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 14:11:52] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 14:12:44,525] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 14:12:44] "OPTIONS /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-11-20 14:12:44,533] WARNING add_product() L67   Erro ao adicionar product 'Guaraná', produto de mesmo nome e recipiente já salvo na base :/ - call_trace=C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py L67  
+[2023-11-20 14:12:44,535] INFO _log() L96   127.0.0.1 - - [20/Nov/2023 14:12:44] "[31m[1mPOST /product HTTP/1.1[0m" 409 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  

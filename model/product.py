@@ -10,7 +10,7 @@ class Product(Base):
     __tablename__ = 'product'
 
     id = Column("pk_product", Integer, primary_key=True)
-    nome = Column(String(140), unique=True)
+    nome = Column(String(140))
     recipiente = Column(Float)
     quantidade = Column(Integer)
     valor = Column(Float)
