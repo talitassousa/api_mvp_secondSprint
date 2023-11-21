@@ -94,7 +94,7 @@ def get_products():
 
 
 @app.get(
-    "/product",
+    "/product/",
 )
 @cross_origin()
 def get_product(query: ProductBuscaSchema):
@@ -114,12 +114,12 @@ def get_product(query: ProductBuscaSchema):
 
 @app.put("/product/")
 @cross_origin()
-def update_product():
+def update_product(query: ProductBuscaSchema):
+    product_id = query.id
     data = request.get_json()
     if not data:
         return {"message": "Dados JSON ausentes no corpo da solicitação."}, 400
-
-    product_id = data.get("id")
+    
     if not product_id:
         return {"message": "ID do produto ausente no corpo da solicitação."}, 400
 

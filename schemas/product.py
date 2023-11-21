@@ -71,7 +71,7 @@ def apresenta_product(product: Product):
     return {
         "id": product.id,
         "nome": product.nome,
-        "recipente": product.recipiente,
+        "recipiente": product.recipiente,
         "quantidade": product.quantidade,
         "valor": product.valor,
         "total_cometarios": len(product.comentarios),
