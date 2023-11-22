@@ -10,7 +10,7 @@ O principal objetivo ao criar esse projeto, é que ele realmente pudesse ser usa
  - EDITAR: está funcionalidade me permite atualizar produtos já existentes na tabela.
  - DELETAR: está funcionalidade me permite deletar produtos já existentes na tabela.
 
-### Como executar ⚙️
+### COMO EXECUTAR ⚙️
 Será necessário ter todas as libs python listadas no `requirements.txt` instaladas.
 Após clonar o repositório, é necessário ir ao diretório raiz, pelo terminal, para poder executar os comandos descritos abaixo.
 
