@@ -1,14 +1,14 @@
 # DEPÓSITO DE BEBIDAS 🍺
-Essa API foi desenvolvida para gerenciar o estoque de um depósito de bebidas: buscar, adicionar, editar e deletar. Tive como objetivo poder adicionar um produto a tabela e me certificar que caso este produto  Ela utiliza Flask e SQLite3 para a manipulação e consulta ao banco de dados e conta com uma documentação OpenAPI integrada.
+Essa API foi desenvolvida para gerenciar o estoque de um depósito de bebidas: buscar, adicionar, editar e deletar produtos. Ela utiliza Flask e SQLite3 para a manipulação e consulta ao banco de dados e conta com uma documentação OpenAPI integrada.
 
 ### DESCRIÇÃO 📜 
-O principal objetivo ao criar esse projeto, é que ele realmente pudesse ser usado na vida real. Foram feitas entradas onde coloco o nome, recipiente (em litros), quantidade e valor do produto. Tive o cuidado de não permitir que NOME e RECIPIENTE pudessem ser adicionados de maneira igual, pois posso ter duas coca-colas porém uma pode ser de 2L e a outra de 0.6L. E coloquei alguns "Toast" para que as ações durante o uso fique claro ao usuário.
+O principal objetivo ao criar esse projeto, é que ele realmente pudesse ser usado na vida real. Foram feitas entradas onde coloco o nome, recipiente (em litros), quantidade e valor do produto. Tive o cuidado de não permitir que NOME e RECIPIENTE pudessem ser adicionados duas vezes, pois posso ter duas coca-colas porém uma pode ser de 2L e a outra de 0.6L e são produtos diferentes. Coloquei alguns "Toast" para que as ações feitas durante o uso da API ficasse clara ao usuário.
 
 ### PRINCIPAIS RECURSOS 📍
- - CRIAR: está funcionalidade me permite criar um novo produto na minha tabela.
- - BUSCAR: está funcionalidade me permite buscar os produtos já existentes na minha tabela.
- - EDITAR: está funcionalidade me permite atualizar produtos já existentes na minha tabela.
- - DELETAR: está funcionalidade me permite deletar produtos já existentes na minha tabela.
+ - CRIAR: está funcionalidade me permite criar um novo produto na tabela.
+ - BUSCAR: está funcionalidade me permite buscar os produtos já existentes na tabela.
+ - EDITAR: está funcionalidade me permite atualizar produtos já existentes na tabela.
+ - DELETAR: está funcionalidade me permite deletar produtos já existentes na tabela.
 
 ### Como executar ⚙️
 Será necessário ter todas as libs python listadas no `requirements.txt` instaladas.
