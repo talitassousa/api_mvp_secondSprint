@@ -2,7 +2,7 @@
 Essa API foi desenvolvida para gerenciar o estoque de um depósito de bebidas: buscar, adicionar, editar e deletar produtos. Ela utiliza Flask e SQLite3 para a manipulação e consulta ao banco de dados e conta com uma documentação OpenAPI integrada.
 
 ### DESCRIÇÃO 📜 
-O principal objetivo ao criar esse projeto, é que ele realmente pudesse ser usado na vida real. Foram feitas entradas onde coloco o nome, recipiente (em litros), quantidade e valor do produto. Tive o cuidado de não permitir que NOME e RECIPIENTE pudessem ser adicionados duas vezes, pois posso ter duas coca-colas porém uma pode ser de 2L e a outra de 0.6L e são produtos diferentes. Coloquei alguns "Toast" para que as ações feitas durante o uso da API ficasse clara ao usuário.
+O principal objetivo ao criar esse projeto, é que ele realmente pudesse ser usado na vida real. Foram feitas entradas onde coloco o nome, recipiente (em litros), quantidade e valor do produto. Tive o cuidado de não permitir que NOME e RECIPIENTE pudessem ser adicionados duas vezes com o mesmo "valor", pois posso ter duas coca-colas porém uma pode ser de 2L e a outra de 0.6L e são produtos diferentes. Coloquei alguns "Toast" para que as ações feitas durante o uso da API ficasse clara ao usuário.
 
 ### PRINCIPAIS RECURSOS 📍
  - CRIAR: está funcionalidade me permite criar um novo produto na tabela.
