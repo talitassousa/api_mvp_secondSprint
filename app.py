@@ -2,6 +2,7 @@ from flask_openapi3 import OpenAPI, Info, Tag
 from flask import Flask, request, jsonify, redirect, abort
 from urllib.parse import unquote
 import sqlite3
+from fastapi import HTTPException
 
 from fastapi.responses import JSONResponse
 from sqlalchemy.exc import IntegrityError
@@ -19,8 +20,21 @@ app.config["CORS_HEADERS"] = "Content-Type"
 
 db_name = "db.sqlite3"
 
+# definindo tags
+home_tag = Tag(
+    name="Documentação",
+    description="Seleção de documentação: Swagger, Redoc ou RapiDoc",
+)
+produto_tag = Tag(
+    name="Produto", description="Adição, visualização e remoção de produtos à base"
+)
+comentario_tag = Tag(
+    name="Comentario",
+    description="Adição de um comentário à um produtos cadastrado na base",
+)
 
-@app.get("/")
+
+@app.get("/", tags=[home_tag])
 @cross_origin()
 def home():
     return redirect("/openapi")
@@ -30,23 +44,19 @@ def home():
     "/product",
 )
 @cross_origin()
-def add_product():
-    data = request.get_json()
-    if not data:
-        return {"message": "Dados JSON ausentes no corpo da solicitação."}, 400
-
+def add_product(form: ProductSchema):
     product = Product(
-        nome=data.get("nome"),
-        recipiente=data.get("recipiente"),
-        quantidade=data.get("quantidade"),
-        valor=data.get("valor"),
+        nome=form.nome,
+        recipiente=form.recipiente,
+        quantidade=form.quantidade,
+        valor=form.valor,
     )
     logger.debug(f"Adicionando product de nome: '{product.nome}'")
     try:
         session = Session()
 
-        nome = data.get("nome")
-        recipiente = data.get("recipiente")
+        nome = form.nome
+        recipiente = form.recipiente
 
         # Verificar se o produto já existe no banco de dados
         existing_product = (
@@ -90,7 +100,7 @@ def get_products():
         }
         for p in products
     ]
-    return jsonify(products_json)
+    return products_json
 
 
 @app.get(
@@ -106,46 +116,46 @@ def get_product(query: ProductBuscaSchema):
     if not product:
         error_msg = "product não encontrado na base :/"
         logger.warning(f"Erro ao buscar product '{product_id}', {error_msg}")
-        return {"mesage": error_msg}, 404
+        return {"message": error_msg}, 404
     else:
         logger.debug(f"product encontrado: '{product.nome}'")
         return apresenta_product(product), 200
 
 
-@app.put("/product/")
+
+@app.put(
+    "/product/{product_id}",
+)
 @cross_origin()
-def update_product(query: ProductBuscaSchema):
-    product_id = query.id
-    data = request.get_json()
-    if not data:
-        return {"message": "Dados JSON ausentes no corpo da solicitação."}, 400
-    
-    if not product_id:
-        return {"message": "ID do produto ausente no corpo da solicitação."}, 400
-
-    session = Session()
-    product = session.query(Product).filter(Product.id == product_id).first()
-
-    if not product:
-        error_msg = "Produto não encontrado na base :/"
-        logger.warning(f"Erro ao buscar produto '#{product_id}', {error_msg}")
-        return {"message": error_msg}, 404
-
-    # Update product data
-    product.nome = data.get("nome", product.nome)
-    product.recipiente = data.get("recipiente", product.recipiente)
-    product.quantidade = data.get("quantidade", product.quantidade)
-    product.valor = data.get("valor", product.valor)
-
+def update_product(product_id: int, form: ProductSchema):
     try:
+        session = Session()
+
+        # Verificar se o produto existe no banco de dados
+        existing_product = session.query(Product).filter_by(id=product_id).first()
+
+        if existing_product is None:
+            raise HTTPException(status_code=404, detail="Produto não encontrado")
+
+        # Atualizar os atributos do produto com os dados do formulário
+        existing_product.nome = form.nome
+        existing_product.recipiente = form.recipiente
+        existing_product.quantidade = form.quantidade
+        existing_product.valor = form.valor
+
         session.commit()
-        logger.debug(f"Produto atualizado: '{product.nome}'")
-        return apresenta_product(product), 200
+
+        logger.debug(f"Produto de ID {product_id} atualizado com sucesso")
+        return apresenta_product(existing_product), 200
+
+    except HTTPException as httpException:
+        return {"message": httpException.detail}, httpException.status_code
 
     except Exception as error:
         error_msg = "Não foi possível atualizar o produto :/"
-        logger.warning(f"Erro ao atualizar produto '{product.nome}', {error_msg}")
+        logger.warning(f"Erro ao atualizar produto de ID {product_id}, {error_msg}")
         return {"message": error_msg}, 400
+
 
 @app.delete("/product/")
 @cross_origin()

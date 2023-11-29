@@ -8,7 +8,7 @@ from schemas import ComentarioSchema
 class ProductSchema(BaseModel):
     """Define como um novo product a ser inserido deve ser representado"""
 
-    id: int = 0
+    # id: int = 0
     nome: str = "FANTA"
     recipiente: float = 0.6
     quantidade: Optional[int] = 5
