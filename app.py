@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify, redirect, abort
 from urllib.parse import unquote
 import sqlite3
 from fastapi import HTTPException
+from fastapi import Path
 
 from fastapi.responses import JSONResponse
 from sqlalchemy.exc import IntegrityError
@@ -122,39 +123,37 @@ def get_product(query: ProductBuscaSchema):
         return apresenta_product(product), 200
 
 
-
 @app.put(
-    "/product/{product_id}",
+    "/product/",
 )
 @cross_origin()
-def update_product(product_id: int, form: ProductSchema):
+def update_product(query: ProductBuscaSchema, form: ProductSchema):
+    product_id = query.id
     try:
+
         session = Session()
 
         # Verificar se o produto existe no banco de dados
-        existing_product = session.query(Product).filter_by(id=product_id).first()
+        existing_product = session.query(Product).filter(Product.id == product_id).first()
 
         if existing_product is None:
-            raise HTTPException(status_code=404, detail="Produto não encontrado")
+            raise HTTPException(status_code=404, detail=f"Produto de id {product_id} não encontrado")
 
-        # Atualizar os atributos do produto com os dados do formulário
+        # Atualizar os campos do produto com os novos valores
+        
         existing_product.nome = form.nome
         existing_product.recipiente = form.recipiente
         existing_product.quantidade = form.quantidade
         existing_product.valor = form.valor
 
         session.commit()
-
-        logger.debug(f"Produto de ID {product_id} atualizado com sucesso")
+        logger.debug(f"Atualizado product de id: {product_id}")
         return apresenta_product(existing_product), 200
 
-    except HTTPException as httpException:
-        return {"message": httpException.detail}, httpException.status_code
-
     except Exception as error:
-        error_msg = "Não foi possível atualizar o produto :/"
-        logger.warning(f"Erro ao atualizar produto de ID {product_id}, {error_msg}")
-        return {"message": error_msg}, 400
+        error_msg = f"Erro interno ao processar a requisição: {str(error)}"
+        logger.error(error_msg)
+        raise HTTPException(status_code=500, detail=error_msg)
 
 
 @app.delete("/product/")

@@ -9,10 +9,11 @@ class ProductSchema(BaseModel):
     """Define como um novo product a ser inserido deve ser representado"""
 
     # id: int = 0
-    nome: str = "FANTA"
+    nome: str = ""
     recipiente: float = 0.6
     quantidade: Optional[int] = 5
     valor: float = 7.50
+
 
 
 class ProductBuscaSchema(BaseModel):
@@ -59,10 +60,8 @@ class ProductDelSchema(BaseModel):
     """Define como deve ser a estrutura do dado retornado após uma requisição
     de remoção.
     """
-
     mesage: str
     nome: str
-
 
 def apresenta_product(product: Product):
     """Retorna uma representação do product seguindo o schema definido em
