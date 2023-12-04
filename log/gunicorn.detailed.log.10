@@ -1,59 +1,46 @@
-[2023-12-01 14:31:51,476] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:31:52,766] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:31:52] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:31:52,872] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:31:52] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:31:52,879] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:31:52] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:31:52,880] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:31:52] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:31:53,070] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:31:53] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:31:53,078] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:31:53] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:32:19,587] ERROR log_exception() L825  Exception on /product/ [PUT] - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py L825 
-Traceback (most recent call last):
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
-    response = func(**func_kwargs)
-               ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
-    resp = make_response(f(*args, **kwargs))
-                         ^^^^^^^^^^^^^^^^^^
-TypeError: update_product() missing 1 required positional argument: 'product_id'
-[2023-12-01 14:32:19,591] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:32:19] "[35m[1mPUT /product/ HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:30,651] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\app.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:30,781] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:33,999] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:33] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:34,091] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:34] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:34,104] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:34] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:34,105] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:34] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:34,272] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:34] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:34,278] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:34] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:38,630] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:38] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:38,665] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:38] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:38,673] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:38] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:38,674] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:38] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:38,776] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:38] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:34:38,785] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:34:38] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:35:23,346] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+[2023-12-01 15:03:59,779] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.0.58:5000 - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:35:23,346] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:35:23,349] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:35:25,101] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:35:25] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:35:25,116] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:35:25] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:35:25,225] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:35:25] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:35:25,240] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:35:25] "[36mGET /openapi/static/images/rapidoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:35:25,242] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:35:25] "[36mGET /openapi/static/images/redoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:35:27,295] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:35:27] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-01 14:35:27,336] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 14:35:27] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:03:59,781] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:03:59,788] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:04:02,107] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:04:02] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:04:02,122] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:04:02] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:04:02,209] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:04:02] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:04:02,221] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:04:02] "[36mGET /openapi/static/images/redoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:04:02,223] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:04:02] "[36mGET /openapi/static/images/rapidoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:04:06,045] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:04:06] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:04:06,089] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:04:06] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:04:06,094] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:04:06] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:04:06,096] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:04:06] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:04:06,351] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:04:06] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:06:09,373] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:06:09] "POST /product HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:06:17,718] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:06:17] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:07:08,257] INFO _log() L96    * Detected change in 'C:\\fabrica\\pessoal\\pos-full-stack\\mvp\\first-sprint\\back-end\\schemas\\product.py', reloading - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:07:08,410] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:07:09,991] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:07:09] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:07:10,085] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:07:10] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:07:10,096] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:07:10] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:07:10,098] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:07:10] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:07:10,418] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:07:10] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:07:10,420] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:07:10] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:07:35,277] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:07:35] "PUT /product/?id=9 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:07:45,234] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:07:45] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:08:17,344] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:08:17] "DELETE /product/?id=9 HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:08:38,365] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:08:38] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:32,966] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.58:5000 - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:32,967] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:32,973] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:34,816] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:25:34] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:34,834] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:25:34] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:34,918] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:25:34] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:34,933] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:25:34] "[36mGET /openapi/static/images/redoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:34,933] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:25:34] "[36mGET /openapi/static/images/rapidoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:39,553] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:25:39] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:39,599] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:25:39] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:39,606] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:25:39] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:39,607] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:25:39] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-01 15:25:39,872] INFO _log() L96   127.0.0.1 - - [01/Dec/2023 15:25:39] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
