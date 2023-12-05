@@ -27,7 +27,7 @@ home_tag = Tag(
     description="Seleção de documentação: Swagger, Redoc ou RapiDoc",
 )
 produto_tag = Tag(
-    name="Produto", description="Adição, visualização e remoção de produtos à base"
+    name="Produto", description="Visualização, adição, edição e remoção de produtos à base"
 )
 comentario_tag = Tag(
     name="Comentario",
@@ -40,61 +40,6 @@ comentario_tag = Tag(
 def home():
     """Redireciona para /openapi, tela que permite a escolha do estilo de documentação."""
     return redirect("/openapi")
-
-
-@app.post(
-    "/product",
-    tags=[produto_tag],
-    responses={"200": ProductViewSchema, "409": ErrorSchema, "400": ErrorSchema},
-)
-@cross_origin()
-def add_product(form: ProductSchema):
-    """Adiciona um novo Produto à base de dados
-
-    Retorna uma representação dos produtos e comentários associados.
-    """
-    product = Product(
-        nome=form.nome,
-        recipiente=form.recipiente,
-        quantidade=form.quantidade,
-        valor=form.valor,
-    )
-    logger.debug(f"Adicionando product de nome: '{product.nome}'")
-    try:
-        # criando conexão com a base
-        session = Session()
-
-        nome = form.nome
-        recipiente = form.recipiente
-
-        # Verificar se o produto já existe no banco de dados
-        existing_product = (
-            session.query(Product).filter_by(nome=nome, recipiente=recipiente).first()
-        )
-
-        if existing_product is not None:
-            raise RuntimeError
-
-        # adicionando produto
-        session.add(product)
-
-        # efetivando o comando de adição de novo item na tabela
-        session.commit()
-        logger.debug(f"Adicionado product de nome: '{product.nome}'")
-        return apresenta_product(product), 200
-
-    except RuntimeError as runtimeError:
-        # como a duplicidade do nome é a provável razão do IntegrityError
-        error_msg = "produto de mesmo nome e recipiente já salvo na base :/"
-        logger.warning(f"Erro ao adicionar product '{product.nome}', {error_msg}")
-        return {"message": error_msg}, 409
-
-    except Exception as error:
-        # caso um erro fora do previsto
-        error_msg = "Não foi possível salvar novo item :/"
-        logger.warning(f"Erro ao adicionar product '{product.nome}', {error_msg}")
-        return {"message": error_msg}, 400
-
 
 @app.get(
     "/products",
@@ -153,8 +98,66 @@ def get_product(query: ProductBuscaSchema):
         return apresenta_product(product), 200
 
 
+
+@app.post(
+    "/product",
+    tags=[produto_tag],
+    responses={"200": ProductViewSchema, "409": ErrorSchema, "400": ErrorSchema},
+)
+@cross_origin()
+def add_product(form: ProductSchema):
+    """Adiciona um novo Produto à base de dados
+
+    Retorna uma representação dos produtos e comentários associados.
+    """
+    product = Product(
+        nome=form.nome,
+        recipiente=form.recipiente,
+        quantidade=form.quantidade,
+        valor=form.valor,
+    )
+    logger.debug(f"Adicionando product de nome: '{product.nome}'")
+    try:
+        # criando conexão com a base
+        session = Session()
+
+        nome = form.nome
+        recipiente = form.recipiente
+
+        # Verificar se o produto já existe no banco de dados
+        existing_product = (
+            session.query(Product).filter_by(nome=nome, recipiente=recipiente).first()
+        )
+
+        if existing_product is not None:
+            raise RuntimeError
+
+        # adicionando produto
+        session.add(product)
+
+        # efetivando o comando de adição de novo item na tabela
+        session.commit()
+        logger.debug(f"Adicionado product de nome: '{product.nome}'")
+        return apresenta_product(product), 200
+
+    except RuntimeError as runtimeError:
+        # como a duplicidade do nome é a provável razão do IntegrityError
+        error_msg = "produto de mesmo nome e recipiente já salvo na base :/"
+        logger.warning(f"Erro ao adicionar product '{product.nome}', {error_msg}")
+        return {"message": error_msg}, 409
+
+    except Exception as error:
+        # caso um erro fora do previsto
+        error_msg = "Não foi possível salvar novo item :/"
+        logger.warning(f"Erro ao adicionar product '{product.nome}', {error_msg}")
+        return {"message": error_msg}, 400
+
+
+
+
 @app.put(
-    "/product/",
+    "/product/", tags=[produto_tag],
+    responses={"200": ProductViewSchema, "409": ErrorSchema, "400": ErrorSchema}
 )
 @cross_origin()
 def update_product(query: ProductBuscaSchema, form: ProductSchema):
@@ -190,7 +193,8 @@ def update_product(query: ProductBuscaSchema, form: ProductSchema):
         raise HTTPException(status_code=500, detail=error_msg)
 
 
-@app.delete("/product/")
+@app.delete("/product/",  tags=[produto_tag],
+    responses={"200": ProductViewSchema, "409": ErrorSchema, "400": ErrorSchema})
 @cross_origin()
 def del_product(query: ProductBuscaSchema):
     """Deleta um Produto cadastrado 
