@@ -17,6 +17,7 @@ class Comentario(Base):
     # a referencia ao product, a chave estrangeira que relaciona
     # um product ao comentário.
     product = Column(Integer, ForeignKey("product.pk_product"), nullable=False)
+    # provider = Column(Integer, ForeignKey("provider.pk_product"), nullable=False)
 
     def __init__(self, texto:str, data_insercao:Union[DateTime, None] = None):
         """

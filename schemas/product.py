@@ -13,6 +13,7 @@ class ProductSchema(BaseModel):
     recipiente: float = 0.6
     quantidade: Optional[int] = 5
     valor: float = 7.50
+    fornecedor: str = ""
 
 
 
@@ -39,6 +40,7 @@ def apresenta_products(products: List[Product]):
             "recipiente": product.recipiente,
             "quantidade": product.quantidade,
             "valor": product.valor,
+            "fornecedor": product.fornecedor,
         })
 
     return {"produtos": result}
@@ -52,6 +54,7 @@ class ProductViewSchema(BaseModel):
     recipiente: float = 0.6
     quantidade: Optional[int] = 12
     valor: float = 12.50
+    fornecedor: str = "Mys Distribuidora"
     total_cometarios: int = 1
     comentarios: List[ComentarioSchema]
 
@@ -60,7 +63,7 @@ class ProductDelSchema(BaseModel):
     """Define como deve ser a estrutura do dado retornado após uma requisição
     de remoção.
     """
-    mesage: str
+    message: str
     nome: str
 
 def apresenta_product(product: Product):
@@ -73,6 +76,7 @@ def apresenta_product(product: Product):
         "recipiente": product.recipiente,
         "quantidade": product.quantidade,
         "valor": product.valor,
+        "fornecedor": product.fornecedor,
         "total_cometarios": len(product.comentarios),
         "comentarios": [{"texto": c.texto} for c in product.comentarios],
     }

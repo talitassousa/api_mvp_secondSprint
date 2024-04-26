@@ -7,6 +7,8 @@ import os
 from model.base import Base
 from model.comentario import Comentario
 from model.product import Product
+from model.provider import Provider
+
 
 db_path = "database/"
 # Verifica se o diretorio não existe

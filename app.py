@@ -8,7 +8,7 @@ from fastapi import Path
 from fastapi.responses import JSONResponse
 from sqlalchemy.exc import IntegrityError
 
-from model import Session, Product
+from model import Session, Product, Provider
 from logger import logger
 from schemas import *
 from flask_cors import CORS, cross_origin
@@ -28,6 +28,9 @@ home_tag = Tag(
 )
 produto_tag = Tag(
     name="Produto", description="Visualização, adição, edição e remoção de produtos à base"
+)
+fornecedor_tag = Tag(
+    name="Fornecedor", description="Visualização e adição de fornecedores na base"
 )
 comentario_tag = Tag(
     name="Comentario",
@@ -63,6 +66,7 @@ def get_products():
             "recipiente": p[2],
             "quantidade": p[3],
             "valor": p[4],
+            "fornecedor": p[5],
         }
         for p in products
     ]
@@ -115,6 +119,7 @@ def add_product(form: ProductSchema):
         recipiente=form.recipiente,
         quantidade=form.quantidade,
         valor=form.valor,
+        fornecedor=form.fornecedor
     )
     logger.debug(f"Adicionando product de nome: '{product.nome}'")
     try:
@@ -182,6 +187,7 @@ def update_product(query: ProductBuscaSchema, form: ProductSchema):
         existing_product.recipiente = form.recipiente
         existing_product.quantidade = form.quantidade
         existing_product.valor = form.valor
+        existing_product.fornecedor = form.fornecedor
 
         session.commit()
         logger.debug(f"Atualizado product de id: {product_id}")
@@ -221,3 +227,54 @@ def del_product(query: ProductBuscaSchema):
         error_msg = "product não encontrado na base :/"
         logger.warning(f"Erro ao deletar product #'{product}', {error_msg}")
         return {"message": error_msg}, 404
+    
+@app.post(
+    "/provider",
+    tags=[fornecedor_tag],
+    responses={"200": ProviderViewSchema, "409": ErrorSchema, "400": ErrorSchema},
+)
+@cross_origin()
+def add_provider(form: ProviderSchema):
+    """Adiciona um novo Fornecedor à base de dados
+
+    Retorna uma representação dos produtos e comentários associados.
+    """
+    provider = Provider(
+        nome=form.nome,
+        cnpj=form.cnpj,
+        cep=form.cep,
+        cidade=form.cidade,
+        uf=form.uf,
+    )
+    logger.debug(f"Adicionando provider de nome: '{provider.nome}'")
+    session = Session()
+    try:
+        session.add(provider)
+        session.commit()
+        return apresenta_provider(provider), 200
+    except IntegrityError:
+        session.rollback()
+        return {"message": "CNPJ já está cadastrado na base :/"}, 409
+    except Exception as error:
+        session.rollback()
+        return {"message": f"Não foi possível salvar novo fornecedor :/{provider.nome}"}, 400
+
+@app.get(
+    "/providers",
+    tags=[fornecedor_tag],
+    responses={"200": ListagemProvidersSchema, "404": ErrorSchema},
+)
+@cross_origin()
+def get_providers():
+    """Faz a busca por todos os Fornecedores cadastrados
+
+    Retorna uma representação da listagem de produtos.
+    """
+    session = Session()
+    providers = session.query(Provider).all()
+    providers_json = [apresenta_provider(provider) for provider in providers]
+    return providers_json
+
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0', port=8080)
+

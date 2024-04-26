@@ -1,0 +1,87 @@
+[2024-04-24 13:40:37,876] ERROR log_exception() L825  Exception on /providers [GET] - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py L825 
+Traceback (most recent call last):
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py", line 272, in get_providers
+    providers_json = [apresenta_provider(provider) for provider in providers]
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py", line 272, in <listcomp>
+    providers_json = [apresenta_provider(provider) for provider in providers]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\schemas\provider.py", line 77, in apresenta_provider
+    "total_cometarios": len(provider.comentarios),
+                            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Provider' object has no attribute 'comentarios'
+[2024-04-24 13:40:37,930] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 13:40:37] "[35m[1mGET /providers HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 13:41:23,497] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 13:41:23] "[31m[1mPOST /provider HTTP/1.1[0m" 400 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 13:45:06,889] ERROR log_exception() L825  Exception on /providers [GET] - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py L825 
+Traceback (most recent call last):
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py", line 272, in get_providers
+    providers_json = [apresenta_provider(provider) for provider in providers]
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py", line 272, in <listcomp>
+    providers_json = [apresenta_provider(provider) for provider in providers]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\schemas\provider.py", line 77, in apresenta_provider
+    "total_cometarios": len(provider.comentarios),
+                            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Provider' object has no attribute 'comentarios'
+[2024-04-24 13:45:06,894] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 13:45:06] "[35m[1mGET /providers HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 13:46:57,238] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 13:46:57] "[31m[1mPOST /provider HTTP/1.1[0m" 409 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 13:50:20,543] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 13:50:20] "[31m[1mPOST /provider HTTP/1.1[0m" 409 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:04,391] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.58:5000 - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:04,392] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:07,427] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 15:21:07] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:07,454] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 15:21:07] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:07,552] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 15:21:07] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:07,603] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 15:21:07] "[36mGET /openapi/static/images/rapidoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:07,604] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 15:21:07] "[36mGET /openapi/static/images/redoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:10,083] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 15:21:10] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:10,120] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 15:21:10] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:10,129] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 15:21:10] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:10,130] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 15:21:10] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:10,426] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 15:21:10] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 15:21:29,707] ERROR add_provider() L258  Erro ao adicionar fornecedor: 'Provider' object has no attribute 'comentarios' - call_trace=C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py L258 

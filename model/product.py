@@ -14,17 +14,20 @@ class Product(Base):
     recipiente = Column(Float)
     quantidade = Column(Integer)
     valor = Column(Float)
+    fornecedor = Column(String(140))
     data_insercao = Column(DateTime, default=datetime.now())
 
     comentarios = relationship("Comentario")
 
-    def __init__(self, nome:str, quantidade:int, valor:float, recipiente:float,
+    def __init__(self, nome:str, quantidade:int, valor:float, recipiente:float, fornecedor:str,
                  data_insercao:Union[DateTime, None] = None):
     
         self.nome = nome
         self.recipiente = recipiente
         self.quantidade = quantidade
         self.valor = valor
+        self.fornecedor = fornecedor
+
 
         # se não for informada, será a data exata da inserção no banco;
         if data_insercao:

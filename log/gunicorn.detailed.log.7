@@ -1,0 +1,71 @@
+[2024-04-24 15:21:29,709] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 15:21:29] "[31m[1mPOST /provider HTTP/1.1[0m" 400 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:13:17,625] ERROR log_exception() L825  Exception on /providers [GET] - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py L825 
+Traceback (most recent call last):
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py", line 276, in get_providers
+    app.run(debug=True, host='0.0.0.0', port=8080)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\app.py", line 276, in <listcomp>
+    app.run(debug=True, host='0.0.0.0', port=8080)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\fabrica\pessoal\pos-full-stack\mvp\first-sprint\back-end\schemas\provider.py", line 77, in apresenta_provider
+    "total_cometarios": len(provider.comentarios),
+                            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Provider' object has no attribute 'comentarios'
+[2024-04-24 16:13:17,646] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:13:17] "[35m[1mGET /providers HTTP/1.1[0m" 500 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:55:51,948] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.58:5000 - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:55:51,950] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:30,512] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.58:5000 - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:30,514] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:38,353] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:56:38] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:38,371] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:56:38] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:38,455] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:56:38] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:38,476] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:56:38] "[36mGET /openapi/static/images/redoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:38,482] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:56:38] "[36mGET /openapi/static/images/rapidoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:42,116] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:56:42] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:42,160] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:56:42] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:42,167] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:56:42] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:42,167] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:56:42] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:56:42,414] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:56:42] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 16:57:07,502] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 16:57:07] "POST /provider HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 17:03:19,330] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 17:03:19] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 17:03:24,137] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 17:03:24] "GET /providers HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 17:04:48,256] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 17:04:48] "POST /provider HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 17:04:50,295] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 17:04:50] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 17:10:15,384] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 17:10:15] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 17:10:16,378] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 17:10:16] "GET /providers HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 17:11:22,690] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 17:11:22] "POST /provider HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-24 17:11:24,741] INFO _log() L96   127.0.0.1 - - [24/Apr/2024 17:11:24] "GET /products HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-25 09:01:06,612] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.58:5000 - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-25 09:01:06,621] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-25 09:01:11,571] INFO _log() L96   127.0.0.1 - - [25/Apr/2024 09:01:11] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-25 09:01:11,620] INFO _log() L96   127.0.0.1 - - [25/Apr/2024 09:01:11] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\talit\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\_internal.py L96  
